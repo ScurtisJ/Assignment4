@@ -162,7 +162,7 @@ public class HashST<Key, Value> {
         for (String password : passwords) {
             boolean isStrong = isStrongPassword(password, dictionary);
             System.out.println("Password: " + password + " is " + (isStrong ? "strong" : "weak"));
-            System.out.println("Search cost: " + dictionary.getSearchCost());
+            System.out.println("Coast to search: " + dictionary.getSearchCost());
         }
     }
 }
