@@ -44,7 +44,7 @@ public class HashST<Key, Value> {
 
     private int hash(Key key) {
         int hash = 0;
-        String strKey = (String) key; // Assumes keys are strings
+        String strKey = (String) key; // Keys are strings
         for (int i = 0; i < strKey.length(); i++) {
             hash = (hash * 31) + strKey.charAt(i);
         }
@@ -121,10 +121,10 @@ public class HashST<Key, Value> {
     }
 
     public Iterable<Key> keys() {
-        Queue<Key> queue = new Queue<>(); // this queue class is from princton textbook
+        Queue<Key> queue = new Queue<>(); // I copied this from the textbook
         for (int i = 0; i < m; i++) {
             for (Node x = st[i]; x != null; x = x.next) {
-                queue.enqueue((Key) x.key); // enque cuz add wasnt working
+                queue.enqueue((Key) x.key); // I used enqueue rather than add
             }
         }
         return queue;
